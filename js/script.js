@@ -7,7 +7,7 @@ const icon = document.getElementById('themeIcon');
 // Use the saved preference when available; otherwise default to light mode.
 let savedTheme = null;
 try { savedTheme = localStorage.getItem('sam-portfolio-theme'); } catch (error) {}
-if (savedTheme === 'dark' || savedTheme === 'light') applyTheme(savedTheme);
+applyTheme(savedTheme === 'light' ? 'light' : 'dark');
 
 function applyTheme(theme) {
   root.setAttribute('data-theme', theme);
